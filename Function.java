@@ -1,5 +1,5 @@
 import java.util.HashMap;
 
-interface Function<R> {
+public interface Function<R> {
     R exec(HashMap<String, Object> hash);
 }
