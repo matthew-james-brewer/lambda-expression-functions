@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /**
  * Executes a function with the specified arguments and return type.
  *
