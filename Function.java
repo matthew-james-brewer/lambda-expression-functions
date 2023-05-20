@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /**
  * Represents a function with arguments and a return type.
  * Implement this interface to define custom functions.
