@@ -1,6 +1,6 @@
 import java.util.HashMap;
 /**
- * Represents a function with arguments and a return type.
+ * Represents a function (a lambda expression) with arguments and a return type.
  * Put a lambda expression in place of this interface to define custom functions.
  *
  * @param <R> the return type of the function
