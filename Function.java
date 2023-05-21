@@ -6,6 +6,7 @@ import java.util.HashMap;
  * @param <R> the return type of the function
  * @see FunctionRunner
  */
+@FunctionalInterface
 public interface Function<R> {
     /**
      * Executes the function with the given arguments.
