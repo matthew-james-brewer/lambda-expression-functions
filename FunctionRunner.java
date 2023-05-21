@@ -2,6 +2,7 @@ import java.util.HashMap;
 /** executes a {@link Function} with the specified arguments and return type.
  *
  * @param <R> the return type of the function
+ * @see {@link Function}
  */
 public class FunctionRunner<R> {
     private Function<R> in;
@@ -31,9 +32,10 @@ public class FunctionRunner<R> {
      *
      * @param o the arguments to pass to the function
      * @return the result of the function execution
-     * @throws IllegalArgumentException if the argument types do not match the expected types
+     * @throws IllegalArgumentException if the arguments' length do not match the expected arguments' length or argument types do not match the expected types
+     * @see Function#exec(HashMap)
      */
-    public R exec(Object... o) {
+    public R exec(Object... o) throws IllegalArgumentException {
         if (o.length != args.size()) {
             throw new IllegalArgumentException("Formal and actual argument lists differ in length. Expected: " + args.size() + ", Actual: " + o.length);
         }
