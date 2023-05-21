@@ -4,6 +4,7 @@ import java.util.HashMap;
  * Put a lambda expression in place of this interface to define custom functions.
  *
  * @param <R> the return type of the function
+ * @see FunctionRunner
  */
 public interface Function<R> {
     /**
@@ -11,6 +12,7 @@ public interface Function<R> {
      *
      * @param hash a HashMap containing the arguments as key-value pairs
      * @return the result of the function execution
+     * @see FunctionRunner#exec(Object...)
      */
     R exec(HashMap<String, Object> hash);
 }
