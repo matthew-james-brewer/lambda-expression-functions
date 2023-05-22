@@ -25,13 +25,13 @@ class ImplementExample implements Function<String> {
 		new Class<?>[]{Integer.class,String.class},
 		new String[]{"number","text"},
 		this);
-	public static FunctionRunner<String> getFr(){return fr;}
+	public FunctionRunner<String> getFr(){return fr;}
 	//here is the main method:
 	public String exec(HashMap<String, Object> hash) {
 		return implement("Why did you say \""+(String)hash.get("text")+"\"?",(Integer)hash.get("number"));
 	}
 	//add as many functions as you want
-	public static String implement(Integer i, String s) throws IndexOutOfBoundsException {
+	public static String implement(String s, Integer i) throws IndexOutOfBoundsException {
 		if(i.intValue() > max || i.intValue() < min) {
 			throw new IndexOutOfBoundsException("out of range");
 		}
