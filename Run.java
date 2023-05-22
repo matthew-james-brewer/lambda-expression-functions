@@ -21,14 +21,14 @@ class ImplementExample implements Function<String> {
 	private static final int max = new Integer(15);
 	private static final int min = new Integer(-10);
 	//make it easy to run with a FunctionRunner inside
-	private static FunctionRunner<String> fr = new FunctionRunner<>(
+	private FunctionRunner<String> fr = new FunctionRunner<>(
 		new Class<?>[]{Integer.class,String.class},
 		new String[]{"number","text"},
 		this);
 	public static FunctionRunner<String> getFr(){return fr;}
 	//here is the main method:
 	public String exec(HashMap<String, Object> hash) {
-		return implement("Why did you say \""+hash.get("text")+"\"?",hash.get("number"));
+		return implement("Why did you say \""+(String)hash.get("text")+"\"?",(Integer)hash.get("number"));
 	}
 	//add as many functions as you want
 	public static String implement(Integer i, String s) throws IndexOutOfBoundsException {
