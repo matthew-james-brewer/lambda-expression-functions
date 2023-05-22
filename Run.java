@@ -12,7 +12,7 @@ public class Run {
         );
       //use [var name].exec([args]) to run it and return the result
       System.out.println(basic.exec(2));
-	  System.out.println(ImplementExample.getFr().exec(10, "banana"));
+	  System.out.println((new ImplementExample()).getFr().exec(10, "banana"));
     }
 }
 //implement it to create functions that need to be put in smaller chunks
