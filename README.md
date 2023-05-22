@@ -6,7 +6,8 @@ If you don't have java, do `sudo yum install java-1.8.0-openjdk` if you're on RH
 ## To install java with Windows
 If you don't have java, go to [Openjdk downloads](https://jdk.java.net).
 #### To compile as a `jar` file
-First, go to a folder and type `git clone https://github.com/matthew-james-brewer/lambda-functions.git`(Install Git for windows: `winget install git`).\
+First, go to a folder and type `git clone https://github.com/matthew-james-brewer/lambda-functions.git && cd lambda-functions`(Install Git for windows: `winget install git`).\
 Then, type `javac Run.java`.\
-Finally, type `jar cfm lambda-functions.jar manifest.txt *.class`.\
-To run the jar file, type `java -jar lambda-functions.jar`.
+Finally, type `jar cfm lambda-functions.jar manifest.mf *.class`.\
+To run the jar file, type `java -jar lambda-functions.jar`.\
+_*I*_ f you want to view docs, type (in a new folder), `javadoc /path/to/lambda-functions/Function.java /path/to/lambda-functions/FunctionRunner.java` where /path/to is the path to it.
