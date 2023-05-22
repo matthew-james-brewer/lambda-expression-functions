@@ -1,6 +1,7 @@
 import java.util.HashMap;
 /** executes a {@link Function} with the specified arguments and return type.
  *
+ * @author Matttew Brewer: mjbrewer17@gmail.com
  * @param <R> the return type of the function
  * @see {@link Function}
  */
@@ -31,7 +32,7 @@ public class FunctionRunner<R> {
      * Executes the function with the provided arguments.
      *
      * @param o the arguments to pass to the function
-     * @return the result of the function execution
+     * @return the result of the function execution converted to R
      * @throws IllegalArgumentException if the arguments' length do not match the expected arguments' length or argument types do not match the expected types
      * @see Function#exec(HashMap)
      */
@@ -50,6 +51,6 @@ public class FunctionRunner<R> {
             h.put(key, value);
             i++;
         }
-        return in.exec(h);
+        return (R)in.exec(h);
     }
 }
