@@ -18,8 +18,8 @@ public class Run {
 //implement it to create functions that need to be put in smaller chunks
 class ImplementExample implements Function<String> {
 	//add fields if you like
-	private static final int max = new Integer(15);
-	private static final int min = new Integer(-10);
+	private static final int max = 15;
+	private static final int min = -10;
 	//make it easy to run with a FunctionRunner inside
 	private FunctionRunner<String> fr = new FunctionRunner<>(
 		new Class<?>[]{Integer.class,String.class},
