@@ -45,12 +45,12 @@ public class FunctionRunner<R> {
         for (String key : args.keySet()) {
             Class<?> expectedType = args.get(key);
             Object value = o[i];
-            if (value.getClass() != expectedType) {
+            if (!expectedType.isInstance(value)) {
                 throw new IllegalArgumentException("Incorrect type of argument value for '" + key + "'. Expected: " + expectedType.getSimpleName() + ", Actual: " + value.getClass().getSimpleName());
             }
             h.put(key, value);
             i++;
         }
-        return (R)in.exec(h);
+        return in.exec(h);
     }
 }
