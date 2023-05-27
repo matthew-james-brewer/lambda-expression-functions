@@ -12,10 +12,46 @@ public class Run {
         );
       //use [var name].exec([args]) to run it and return the result
       System.out.println(basic.exec(2));
-	  System.out.println((new ImplementExample()).getFr().exec(10, "banana"));
+      System.out.println((new ImplementExample()).getFr().exec(10, "banana"));
+	  //Example of varargs:
+	  Function<String> s = (list) -> {
+            String st = "[";
+            for (String string : (String[]) list.get("strings")) { //use regular techniques to get varargs parameter
+                st += string + ", ";
+            }
+            st += "\b\b]" + (String) list.get("text")
+                    + "\nexit code:" + (Integer) list.get("number");
+            return st;
+        };
+		//FunctionRunner to run it:
+        FunctionRunner fun = new FunctionRunner(
+                new Class<?>[][]{{String.class, Integer.class}},
+                new String[][]{{"text", "number"}},
+                new Function<?>[]{s},
+                new Class<?>[]{String.class}, //add this to constructor to make varargs (if you have overloaded functions, and you don't want varargs for one, use null.)
+                new String[]{"strings"} //also for varargs (same use of null as above)
+        );
+
+        System.out.println(fun.exec("go", 0, "na na na", "na na na na", "hey hey hey", "goodbye"));
+		//Overloaded function example:
+        Function<String> s2 = (list) ->
+        {
+            return ((String)list.get("text"))+"s";
+        };
+        Function<Integer> t = (list) ->
+        {
+            return ((Integer)list.get("number"))+1;
+        };
+        FunctionRunner funny = new FunctionRunner(
+            new Class<?>[][]{{String.class}, {Integer.class}},
+            new String[][] {{"text"},{"number"}},
+            new Function<?>[] {s2, t}
+        );
+        System.out.println(funny.exec("what?"));
+        System.out.println(funny.exec(2));
     }
 }
-//implement it to create functions that need to be put in smaller chunks
+//Implement it to create functions that need to be put in smaller chunks
 class ImplementExample implements Function<String> {
 	//add fields if you like
 	private static final int max = 15;
@@ -26,9 +62,9 @@ class ImplementExample implements Function<String> {
 		new String[]{"number","text"},
 		this);
 	public FunctionRunner<String> getFr(){return fr;}
-	//here is the main method:
+	//Here is the main method:
 	public String exec(HashMap<String, Object> hash) {
-		return implement("Why did you say \""+(String)hash.get("text")+"\"?",(Integer)hash.get("number"));
+		return implement("Why did you say \""+(String)hash.get("text")+"\"?\nexit code:"(Integer)hash.get("number"));
 	}
 	//add as many functions as you want
 	public static String implement(String s, Integer i) throws IndexOutOfBoundsException {
