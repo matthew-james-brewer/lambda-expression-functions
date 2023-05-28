@@ -10,4 +10,4 @@ First, go to a folder and type `git clone https://github.com/matthew-james-brewe
 Then, type `javac Run.java`.\
 Finally, type `jar cfm lambda-functions.jar manifest.mf *.class`.\
 To run the jar file, type `java -jar lambda-functions.jar`.\
-_*I*_ f you want to view docs, type (in a new folder), `javadoc /path/to/lambda-functions/Function.java /path/to/lambda-functions/FunctionRunner.java` where /path/to is the path to it.
+_*I*_ f you want to view docs, type (in a new folder), `javadoc /path/to/lambda-functions/Function.java /path/to/lambda-functions/FunctionRunner.java` where /path/to is the path to it (if you want to view private members, use the `-private` flag).
