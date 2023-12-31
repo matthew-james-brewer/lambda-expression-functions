@@ -1,7 +1,7 @@
 # Lambda Expression Functions
-Create a list of functions with arguments and return types using a list of list of `Class`es, `String`s, a generic type parameter for the return type, and a lambda expression for the bodies.\
+Create a list of functions with arguments and return types using a list of list of `Class`es, `String`s, a generic type parameter for the return type, and a lambda expression for the bodies.
 ## To install java with Linux/GNU
-If you don't have java, do `sudo yum install java-1.8.0-openjdk` if you're on RHEL(or similar), or `sudo apt-get install default-jdk` for Debian(or similar)
+If you don't have java, do `sudo yum install java-1.8.0-openjdk` if you're on RHEL (or similar), or `sudo apt-get install default-jdk` for Debian (or similar)
 ## To install java with Windows
 If you don't have java, go to [Openjdk downloads](https://jdk.java.net).
 #### To compile as a `jar` file
